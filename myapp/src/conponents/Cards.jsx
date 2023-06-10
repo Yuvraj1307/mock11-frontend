@@ -14,7 +14,7 @@ let [data,setData]=useState([])
 let [{destination,sort},setField]=useState({destination:"",sort:""})
 
 useEffect(()=>{
-    fetch(`http://localhost:4500/post`)
+    fetch(`https://mock11-7sz9.onrender.com/post`)
     .then(res=>res.json())
     .then(data=>setData(data.post))
     .catch(err=>console.log(err))
@@ -24,7 +24,7 @@ console.log(data)
 
 async function delt(e){
 
-    let res=await fetch(`http://localhost:4500/post/${e.target.dataset.id}`,{
+    let res=await fetch(`https://mock11-7sz9.onrender.com/post/${e.target.dataset.id}`,{
         method:"DELETE",
         headers:{
             "Content-type":"application/json"
@@ -51,7 +51,7 @@ useEffect(()=>{
 
      if(destination && !sort){
          
-     fetch(`http://localhost:4500/post/${destination}`)
+     fetch(`https://mock11-7sz9.onrender.com/post/${destination}`)
      .then(res=>res.json())
      .then(data=>setData(data.post))
      .catch(err=>console.log(err))
@@ -65,7 +65,7 @@ if(sort==="asc"){
     
     way=-1
 }
-fetch(`http://localhost:4500/post/get/${way}`)
+fetch(`https://mock11-7sz9.onrender.com/post/get/${way}`)
 .then(res=>res.json())
 .then(data=>setData(data.post))
 .catch(err=>console.log(err))
@@ -79,7 +79,7 @@ fetch(`http://localhost:4500/post/get/${way}`)
         
         way=-1
     }
-    fetch(`http://localhost:4500/post/get/${destination}/filt/${way}`)
+    fetch(`https://mock11-7sz9.onrender.com/post/get/${destination}/filt/${way}`)
     .then(res=>res.json())
     .then(data=>setData(data.post))
     .catch(err=>console.log(err))
