@@ -33,7 +33,7 @@ console.log(name,email,destination,NoOftravellers,BudgetPerPerson)
         name,email,destination,NoOftravellers,BudgetPerPerson
     }
 
-    let res=await fetch(`http://localhost:4500/post`,{
+    let res=await fetch(`https://mock11-7sz9.onrender.com/post`,{
         method:"POST",
         headers:{
             "Content-type":"application/json"
